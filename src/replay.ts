@@ -47,7 +47,7 @@ export async function parseReplayData(token: string, queryQueue: RateLimitedProm
       try {
         data = await queryQueue.enqueue(() => downloadReplay(replayId, token))
         fsPromises.writeFile(`./cache/${replayId}`, data, "utf-8")
-        maybeRemoveRandomEntry("./cache", 100)
+        maybeRemoveRandomEntry("./cache", 7)
         console.log("loaded new!")
         cb(`downloading ${replayId}: success`)
       } catch (e) {
