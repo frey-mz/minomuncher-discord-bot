@@ -49,7 +49,7 @@ function parseArgs(args: string) {
 
 let rateLimiter = new RateLimiter(1, 2000);
 
-const queryQueue = new RateLimitedPromiseQueue(1000)
+const queryQueue = new RateLimitedPromiseQueue(3000)
 
 function filterString(input: string): string {
   const filteredString = input.replace(/[^a-zA-Z0-9-_]/g, '');
