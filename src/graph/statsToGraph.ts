@@ -451,8 +451,6 @@ export function createGraphs(stats: { [key: string]: CumulativeStats }): string[
                 ]
             })
         }
-        console.log(createSankey<NodeName>(document, data, indexedNodeNames, color))
-
         graphs.push(createSankey<NodeName>(document, data, indexedNodeNames, color))
     }
 
